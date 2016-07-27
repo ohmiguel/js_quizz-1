@@ -1,0 +1,81 @@
+
+<html>
+
+<body>
+
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+ <style type="text/css">
+    .hide{
+        display:none;       
+    }
+ </style>    
+
+<div id="Question1">Question 1
+    <div id="answers_q1">
+        <div id="answer1_q1" class="ans" data-type="1">answer 1</div>
+        <div id="answer2_q1" class="ans" data-type="0">answer 2</div>
+    </div>
+</div>
+    <br />
+<div id="Question2">Question 2
+    <div id="answers_q2">
+        <div id="answer1_q2" class="ans" data-type="1">answer 1</div>
+        <div id="answer2_q2" class="ans" data-type="0">answer 2</div>   
+    </div>
+</div>
+    <br />
+<div id="Question3">Question 3
+    <div id="answers_q3">
+        <div id="answer1_q3" class="ans" data-type="1">answer 1</div>
+        <div id="answer2_q3" class="ans" data-type="0">answer 2</div>   
+    </div>
+</div>
+    <br />
+<div id="total">Total Results
+    <div id="answers_total">
+        You have <span id="count"></span> correct answers out of total 3 Questions!!!
+    </div>
+</div>
+
+<script language="javascript" type="text/javascript">
+
+    $(function() {
+
+        $(".ans").click(function(e){
+
+           var res = $(this).attr('data-type');                
+           var clickCounter = $('#count').data('clickCounter');
+           clickCounter = (clickCounter + res);
+           $('#count').data('clickCounter', clickCounter);
+           $('#count').html( clickCounter );
+
+        });
+
+        $("#answer1_q1").click(function() {
+            $("#answers_q1").html('Correct');
+        });
+        $("#answer2_q1").click(function() {
+            $("#answers_q1").html('Wrong');
+        });
+
+        $("#answer1_q2").click(function() {
+            $("#answers_q2").html('Correct');
+        });
+        $("#answer2_q2").click(function() {
+            $("#answers_q2").html('Wrong');
+        });
+
+        $("#answer1_q3").click(function() {
+            $("#answers_q3").html('Correct');
+        });
+        $("#answer2_q3").click(function() {
+            $("#answers_q3").html('Wrong');
+        });
+        /**/
+
+    });         
+</script>   
+
+</body>
+</html>
